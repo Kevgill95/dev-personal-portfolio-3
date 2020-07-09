@@ -20,9 +20,9 @@ server.use(cors());
 //   next();
 // });
 
-server.get('/api', (req, res, next) => {
-  res.send('API Status: Running')
-});
+// server.get('/api', (req, res, next) => {
+//   res.send('API Status: Running')
+// });
 
 
 server.use(express.static('client/build'));
