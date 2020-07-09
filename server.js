@@ -32,7 +32,7 @@ server.use(express.static(path.resolve(__dirname, './public')));
 
 
 server.get('*', (req, res) => {
-    res.sendFile(path.resolve('/Users/kevingillooly/dev-personal-portfolio/public/index.html'));
+    res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
 const REACT_APP_SENDGRID_API_KEY =`${process.env.REACT_APP_SENDGRID_API_KEY}`
