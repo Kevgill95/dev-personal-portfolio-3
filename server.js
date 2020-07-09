@@ -25,15 +25,14 @@ server.get('/api', (req, res, next) => {
 });
 
 
-server.use(express.static('public'))
-server.use('/static', express.static('public'))
+server.use(express.static('client/build'));
+// server.use('/static', express.static('public'))
+// server.use(express.static(path.resolve(__dirname, './public')));
 
-server.use(express.static(path.resolve(__dirname, './public')));
-
-
-server.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'index.html'));
-});
+// server.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'index.html'));
+// });
+server.use(express.json());
 
 const REACT_APP_SENDGRID_API_KEY =`${process.env.REACT_APP_SENDGRID_API_KEY}`
 server.post('/api/email', (req, res, next) => {
