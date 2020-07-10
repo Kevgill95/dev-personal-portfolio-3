@@ -32,6 +32,8 @@ server.use(express.static('client/build'));
 // server.get('*', (req, res) => {
 //     res.sendFile(path.resolve(__dirname, 'index.html'));
 // });
+console.log(express.static('client/build'));
+console.log(`${__dirname}/public/index.html`);
 server.use(express.json());
 
 const REACT_APP_SENDGRID_API_KEY =`${process.env.REACT_APP_SENDGRID_API_KEY}`
