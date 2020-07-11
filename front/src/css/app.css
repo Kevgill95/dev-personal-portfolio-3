@@ -1,0 +1,174 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.affix {
+  top: 0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
+.affix + .container-fluid {
+  padding-top: 70px;
+}
+
+.main > div {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Kanit, sans-serif;
+  font-weight: 800;
+  font-size: 10em;
+  will-change: transform, opacity;
+}
+
+.fadebox {
+  height: 30px;
+  overflow: hidden;
+}
+
+
+
+@keyframes textFadeInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  } to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.textFadeInDown {
+  font-size: 21px;
+  font-family: sans-serif;
+  line-height: 30px;
+  transform: translateY(-30px);
+  animation: textFadeInDown 10ms forwards;
+  animation-duration: 0.5s;
+}
+
+  textFadeInDown:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  
+  textFadeInDown:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes textFadeInDown2 {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    } to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .textFadeInDown2 {
+    transform: translateY(-30px);
+    animation: textFadeInDown2 0.3s 0ms forwards;
+    animation-duration: 1.0s
+  }
+
+
+@keyframes imgFadeInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  } to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.imgFadeInDown {
+  transform: translateY(-30px);
+  animation: imgFadeInDown 2ms forwards;
+  animation-duration: 0.3s;
+}
+
+@keyframes imgFadeIn2 {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  } to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.imgFadeIn2 {
+  transform: translateY(-30px);
+  animation: imgFadeIn2 0.5s 0ms forwards;
+}
+
+@keyframes imgFadeIn3 {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  } to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.imgFadeIn3 {
+  transform: translateY(-30px);
+  animation: imgFadeIn1 1s 0ms forwards;
+}
+
+@keyframes imgFadeIn4 {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  } to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.imgFadeIn4 {
+  transform: translateY(-30px);
+  animation: imgFadeIn1 1s 0ms forwards;
+}

@@ -1,0 +1,28 @@
+#HASH {
+  width: 100%;
+}
+
+#HASH div {
+  display: inline-block;
+}
+
+#right {
+  text-align: right;
+}
+
+#left {
+  text-align: left;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+}
+
+.previous {
+  float: left;
+}
+
+.next {
+  float: right;
+}
