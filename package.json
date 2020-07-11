@@ -8,7 +8,7 @@
     "server": "nodemon index.js",
     "build": "cd client && react-scripts build",
     "test": "echo \"Error: no test specified \" && exit 1",
-    "post-build": "cd client && npm i && npm run build"
+    "heroku-postbuild": "cd client && npm i && npm run build"
   },
   "author": "",
   "license": "ISC",
