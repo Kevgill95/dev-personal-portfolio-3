@@ -24,9 +24,8 @@ server.use(express.json());
 // server.get('/api', (req, res, next) => {
 //   res.send('API Status: Running')
 // });
-console.log(__dirname);
 
-server.use(express.static(`${__dirname}/client/public`));
+server.use(express.static(`client/public`));
 // server.use('/static', express.static('public'))
 // server.use(express.static(path.resolve(__dirname, './public')));
 
