@@ -25,7 +25,7 @@ server.use(cors());
 // });
 
 
-server.use(express.static('client/build'));
+server.use(express.static(`${__dirname}/client/public`));
 // server.use('/static', express.static('public'))
 // server.use(express.static(path.resolve(__dirname, './public')));
 
@@ -33,7 +33,7 @@ server.use(express.static('client/build'));
 //     res.sendFile(path.resolve(__dirname, 'index.html'));
 // });
 console.log(express.static('client/build'));
-console.log(`${__dirname}/public/index.html`);
+console.log(`${__dirname}/client/public/index.html`);
 server.use(express.json());
 
 const REACT_APP_SENDGRID_API_KEY =`${process.env.REACT_APP_SENDGRID_API_KEY}`

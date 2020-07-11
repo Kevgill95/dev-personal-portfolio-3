@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon index.js",
-    "build": "react-scripts build",
+    "build": "cd client && react-scripts build",
     "test": "echo \"Error: no test specified \" && exit 1",
-    "post-build": "npm i && npm run build"
+    "post-build": "cd client && npm i && npm run build"
   },
   "author": "",
   "license": "ISC",
