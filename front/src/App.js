@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Resume from './pages/Resume';
 
 class App extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class App extends Component {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
-                <Link className="nav-link" to='/documents/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
+                <Link className="nav-link" to='/resume' rel="noopener noreferrer" target='_blank'>Resume</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -70,9 +71,9 @@ class App extends Component {
           title={this.state.contact.title}
           />} />
 
-          <Route path='/resume' exact render={() => <a 
-          a href='/documents/Resume.pdf' rel="noopener noreferrer" target="_blank"></a>
-          } />
+          <Route path='/resume' exact render={() => <Resume><a 
+          a href='/resume' rel="noopener noreferrer" target="_blank"></a>
+          </Resume>} />
           
           <Footer />
 
