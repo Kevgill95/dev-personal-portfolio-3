@@ -28,6 +28,21 @@
   border: 1px solid #989a9b;
 }
 
+#subject {
+  display: block;
+  padding: 18px 15px;
+  margin: 0 0 24px 0;
+  border:  1px;
+  outline: none;
+  min-width: 225px;
+  max-width: 100%;
+  font-size: 15px;
+  line-height: 24px;
+  color: #495057;
+  background: #FFF;
+  border: 1px solid #989a9b;
+}
+
 #message {
   border: 1px solid #989a9b;
 }

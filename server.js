@@ -43,6 +43,7 @@ server.post("/api/email", (req, res, next) => {
   const msg = {
     to: "kevgill95@gmail.com",
     from: req.body.email,
+    email: req.body.email,
     subject: req.body.subject,
     text: req.body.message,
   };
