@@ -15,6 +15,7 @@ class Contact extends React.Component {
       super(props);
       this.state = {
         name: '',
+        email: '',
         message: '',
         subject: '',
         disabled: false,
@@ -76,8 +77,13 @@ class Contact extends React.Component {
               </Form.Group>
 
               <Form.Group className="textFadeIn2">
+                <Form.Label htmlFor="email">Email</Form.Label>
+                <Form.Control className="contact-form-text" id="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} />
+              </Form.Group>
+
+              <Form.Group className="textFadeIn2">
                 <Form.Label htmlFor="subject">Subject</Form.Label>
-                <Form.Control className="contact-form-text" id="email" name="subject" type="subject" value={this.state.subject} onChange={this.handleChange} />
+                <Form.Control className="contact-form-text" id="subject" name="subject" type="subject" value={this.state.subject} onChange={this.handleChange} />
               </Form.Group>
 
 
