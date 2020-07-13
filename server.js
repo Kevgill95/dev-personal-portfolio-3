@@ -14,27 +14,32 @@ server.use(bodyParser.json());
 server.use(cors());
 server.use(express.json());
 
-// server.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Origin', '*');
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-//   next();
-// });
+server.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 // server.get('/api', (req, res, next) => {
 //   res.send('API Status: Running')
 // });
 
 server.use(express.static(`${__dirname}/front/build`));
+
+const data = server.get("http://localhost:3000/contact");
+
+server.get('/contact', (req, res) => {
+  // send data as json
+  res.json(data)
+})
+
 // server.use('/static', express.static('public'))
 // server.use(express.static(path.resolve(__dirname, './public')));
 
 // server.get('*', (req, res) => {
 //     res.sendFile(path.resolve(__dirname, 'index.html'));
 // });
-
-// console.log(express.static('client/build'));
-// console.log(`${__dirname}/client/public/index.html`);
 
 const REACT_APP_SENDGRID_API_KEY = `${process.env.REACT_APP_SENDGRID_API_KEY}`;
 server.post("/api/email", (req, res, next) => {
