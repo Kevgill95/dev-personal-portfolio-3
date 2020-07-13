@@ -2,6 +2,9 @@
   "name": "dev-portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "@react-google-maps/api": "^1.8.1",
     "@testing-library/jest-dom": "^4.2.4",
