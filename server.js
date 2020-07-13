@@ -37,7 +37,7 @@ server.get('/contact', (req, res) => {
 server.use('/img',express.static(path.join(__dirname, 'public/images')));
 server.use('/js',express.static(path.join(__dirname, 'public/javascripts')));
 server.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
-server.use(express.static(__dirname + '/public'));
+server.use(express.static('public/images'));
 
 // server.use('/static', express.static('public'))
 // server.use(express.static(path.resolve(__dirname, './public')));

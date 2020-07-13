@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Resume from './pages/Resume';
 
 class App extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class App extends Component {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
-                <Link className="nav-link" to='/public/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
+                <Link className="nav-link" to='file:///Users/kevingillooly/dev-personal-portfolio-3/front/public/images/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -71,7 +72,7 @@ class App extends Component {
           />} />
 
           <Route path='/resume' exact render={() => <a 
-          a href='/public/Resume.pdf' rel="noopener noreferrer" target="_blank"></a>
+          a href='file:///Users/kevingillooly/dev-personal-portfolio-3/front/public/images/Resume.pdf' rel="noopener noreferrer" target="_blank"></a>
           } />
           
           <Footer />
