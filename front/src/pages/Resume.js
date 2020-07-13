@@ -1,5 +1,5 @@
 import React from 'react';
-import Pdf from '../documents/Resume.pdf';
+import Pdf from '../../public/images/Resume.pdf';
 
 function Resume(props) {
     return (
