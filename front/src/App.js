@@ -52,7 +52,7 @@ class App extends Component {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
-                <Link className="nav-link" to='/resume' rel="noopener noreferrer" target='_blank'>Resume</Link>
+                <Link className="nav-link" to='s3://kevin-gillooly-bucket/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
