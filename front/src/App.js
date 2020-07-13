@@ -52,7 +52,7 @@ class App extends Component {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
-                <Link className="nav-link" to='file:///Users/kevingillooly/dev-personal-portfolio-3/front/public/images/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
+                <Link className="nav-link" to='file:///Users/kevingillooly/dev-personal-portfolio-3/front/src/assets/images/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -72,7 +72,7 @@ class App extends Component {
           />} />
 
           <Route path='/resume' exact render={() => <a 
-          a href='file:///Users/kevingillooly/dev-personal-portfolio-3/front/public/images/Resume.pdf' rel="noopener noreferrer" target="_blank"></a>
+          a href='file:///Users/kevingillooly/dev-personal-portfolio-3/front/src/assets/images/Resume.pdf' rel="noopener noreferrer" target="_blank"></a>
           } />
           
           <Footer />
