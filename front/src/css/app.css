@@ -80,7 +80,6 @@
 
 .textFadeInDown {
   font-family: sans-serif;
-  line-height: 30px;
   transform: translateY(-30px);
   animation: textFadeInDown 10ms forwards;
   animation-duration: 0.5s;
