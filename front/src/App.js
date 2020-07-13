@@ -51,7 +51,7 @@ class App extends Component {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
-                <Link className="nav-link" to='/public/Resume.6c134cda.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
+                <Link className="nav-link" to='/public/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -71,7 +71,7 @@ class App extends Component {
           />} />
 
           <Route path='/resume' exact render={() => <a 
-          a href='/public/Resume.6c134cda.pdf' rel="noopener noreferrer" target="_blank"></a>
+          a href='/public/Resume.pdf' rel="noopener noreferrer" target="_blank"></a>
           } />
           
           <Footer />
