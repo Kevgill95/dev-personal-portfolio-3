@@ -40,7 +40,7 @@ class App extends Component {
 
   render = () => {
     return (
-      <Router>
+      <Router basename={'/'}>
         <Container className="p-0" fluid={true}>
 
           <Navbar className="border-bottom" bg="transparent" expand="lg">
@@ -52,7 +52,7 @@ class App extends Component {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
-                <Link className="nav-link" to='s3://kevin-gillooly-bucket/Resume.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
+                <Link className="nav-link" to='/static/media/Resume.6c134cda.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -71,9 +71,9 @@ class App extends Component {
           title={this.state.contact.title}
           />} />
 
-          <Route path='/resume' exact render={() => <a 
-          a href='s3://kevin-gillooly-bucket/Resume.pdf' rel="noopener noreferrer" target="_blank"></a>
-          } />
+          <Route path='/resume' exact render={() => <Resume><a 
+          a href='/static/media/Resume.6c134cda.pdf' rel="noopener noreferrer" target="_blank"></a>
+          </Resume>} />
           
           <Footer />
 

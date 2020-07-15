@@ -40,11 +40,11 @@ server.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
 server.use(express.static('public/images'));
 
 // server.use('/static', express.static('public'))
-// server.use(express.static(path.resolve(__dirname, './public')));
+server.use(express.static(path.resolve(__dirname, './public')));
 
-// server.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'index.html'));
-// });
+server.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './front/public/index.html'));
+});
 
 const REACT_APP_SENDGRID_API_KEY = `${process.env.REACT_APP_SENDGRID_API_KEY}`;
 server.post("/api/email", (req, res, next) => {
