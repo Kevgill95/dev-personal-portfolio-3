@@ -105,9 +105,9 @@ class Contact extends React.Component {
             
 
 
-              {status === 'SUCCESS' ? <p className="d-inline success-msg">Email Sent!</p> : <Button onClick={this.submitForm} className="d-inline-block textFadeIn4" variant="primary" type="submit" disabled={this.state.disabled}>Send</Button>}
+              <Button onSubmit={this.submitForm} className="d-inline-block textFadeIn4" variant="primary" type="submit" disabled={this.state.disabled}>Send</Button>
               {status === 'ERROR' && <p className="d-inline error-msg">Error - Email Not Sent</p>}
-
+              {status === 'SUCCESS' && <p className="d-inline success-msg">Email Sent!</p>}
             </form>
           </Content>
           
@@ -116,8 +116,6 @@ class Contact extends React.Component {
     };
     
   submitForm(ev) {
-    const formData = new FormData(myForm);
-    const myForm = document.getElementById("contactForm");
     ev.preventDefault();
     const form = ev.target;
     const data = new FormData(form);

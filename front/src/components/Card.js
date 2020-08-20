@@ -7,7 +7,7 @@ function Card(props) {
 
   return(
     
-    <div className="d-inline-block kev-card col-md-12" onClick={(e) => props.click(props.item)}>
+    <div className="d-inline-block kev-card" onClick={(e) => props.click(props.item)}>
       <img className="kev-card-image imgFadeInDown" src={props.item.imgSrc} alt={props.item.imgSrc} />
       <CardInfo 
         title={props.item.title} 
