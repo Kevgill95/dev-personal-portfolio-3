@@ -15,7 +15,7 @@ function About(props) {
           <img className="kev-card-image-about imgFadeIn2" alt="src" src={Kevin_Lily} />
 
           <Content className="d-flex justify-content-center">
-            <p className="textFadeInDown2">Hello, my name is Kevin Gillooly, and I am a software developer with experience in JavaScript, React, Ruby on Rails, React Typescript, PostgreSQL, C#, HTML, and CSS.</p>
+            <p className="textFadeInDown2">Hello, my name is Kevin Gillooly, and I am a software developer with experience in JavaScript, React, Ruby on Rails, React Typescript, PostgreSQL, C#, HTML, and CSS. I recently completed a Udemy Python programming course.</p>
           
             <p className="textFadeInDown2">I am currently learning more tech each and every day, with gaining more experience in SQL, Material UI, Node JS, and backend development.</p>
           

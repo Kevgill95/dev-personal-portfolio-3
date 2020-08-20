@@ -18,9 +18,11 @@ class Contact extends React.Component {
         email: '',
         message: '',
         subject: '',
+        status: '',
         disabled: false,
         emailSent: null
       }
+      this.submitForm = this.submitForm.bind(this);
     }
 
     handleChange = (event) => {
@@ -33,79 +35,107 @@ class Contact extends React.Component {
       })
     }
 
-    handleSubmit = (event) => {
-      event.preventDefault();
 
-      this.setState({
-        disabled: true
-      });
-      
-      axios.post('http://localhost:3030/api/email', this.state)
-          .then(res => {
-            if(res.data.success) {
-              this.setState({
-                disabled: false,
-                emailSent: true
-              });
-            } else {
-                this.setState({
-                  disabled: false,
-                  emailSent: false
-                });
-            }
-          })
-          .catch(err => {
-              this.setState({
-                disabled: false,
-                emailSent: false
-              });
-          })
-    }
+    // handleSubmit = (event) => {
+    //   event.preventDefault();
 
+    //   this.setState({
+    //     disabled: true
+    //   });
+      // axios.post('http://localhost:5000/api/email', this.state)
+      //     .then(res => {
+      //       if(res.data.success) {
+      //         this.setState({
+      //           disabled: false,
+      //           emailSent: true
+      //         });
+      //       } else {
+      //           this.setState({
+      //             disabled: false,
+      //             emailSent: false
+      //           });
+      //       }
+      //     })
+      //     .catch(err => {
+      //         this.setState({
+      //           disabled: false,
+      //           emailSent: false
+      //         });
+      //     })
 
     render() {
+      const { status } = this.state;
       return (
         <Container>
 
           <Hero title={this.props.title} />
 
           <Content>
-            <Form>
-              <Form.Group className="textFadeIn1">
-                <Form.Label htmlFor="full-name">Full Name</Form.Label>
-                <Form.Control className="contact-form-text" id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange} />
-              </Form.Group>
+            <form
+                onSubmit={this.submitForm}
+                action='https://formspree.io/myynawny'
+                method='POST'
+                id='contactForm'>
+        
+            <div className="row">
+              <div className="col-md-6 col-sm-6">
+                <div className="textFadeIn1">
+                  <label htmlFor="full-name">Full Name</label>
+                  <input className="contact-form-text" id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+                </div>
+              </div>
 
-              <Form.Group className="textFadeIn2">
-                <Form.Label htmlFor="email">Email</Form.Label>
-                <Form.Control className="contact-form-text" id="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} />
-              </Form.Group>
+              <div className="col-md-6 col-sm-6">
+                <div className="textFadeIn2">
+                  <label htmlFor="email">Your Email</label>
+                  <input className="contact-form-text" id="email" name="email" type="text" value={this.state.email} onChange={this.handleChange} />
+                </div>
+              </div>
+            </div>
 
-              <Form.Group className="textFadeIn2">
-                <Form.Label htmlFor="subject">Subject</Form.Label>
-                <Form.Control className="contact-form-text" id="subject" name="subject" type="subject" value={this.state.subject} onChange={this.handleChange} />
-              </Form.Group>
+              <div className="textFadeIn3">
+                <label htmlFor="subject">Subject</label>
+                <input className="contact-form-text" id="subject" name="subject" type="text" value={this.state.subject} onChange={this.handleChange} />
+              </div>
 
-
-              <Form.Group className="textFadeIn3">
-                <Form.Label htmlFor="message">Message</Form.Label>
-                <Form.Control id="message" name="message" as="textarea" value={this.state.message} onChange={this.handleChange} />
-              </Form.Group>
+              <div className="textFadeIn2">
+                <label htmlFor="message">Message</label>
+                <textarea rows="4" cols="70" id="message" name="message" as="textarea" value={this.state.message} onChange={this.handleChange} />
+              </div>
             
-              <Button onClick={this.handleSubmit} className="d-inline-block textFadeIn4" variant="primary" type="submit" disabled={this.state.disabled}>
-                Send
-              </Button>
 
-              {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent!</p>}
-              {this.state.emailSent === false && <p className="d-inline error-msg">Error - Email Not Sent</p>}
-            </Form>
+
+              {status === 'SUCCESS' ? <p className="d-inline success-msg">Email Sent!</p> : <Button onClick={this.submitForm} className="d-inline-block textFadeIn4" variant="primary" type="submit" disabled={this.state.disabled}>Send</Button>}
+              {status === 'ERROR' && <p className="d-inline error-msg">Error - Email Not Sent</p>}
+
+            </form>
           </Content>
           
         </Container>
-      );
+      )
+    };
+    
+  submitForm(ev) {
+    const formData = new FormData(myForm);
+    const myForm = document.getElementById("contactForm");
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: 'SUCCESS' });
+      } else {
+        this.setState({ status: 'ERROR' });
+      }
+    };
+    xhr.send(data);
     }
-}
-
+};
 
 
 export default Contact;

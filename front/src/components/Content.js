@@ -4,9 +4,9 @@ import Col from 'react-bootstrap/Col';
 function Content(props) {
 
     return(
-              <Col className="text textFadeInDown">
-                {props.children}
-              </Col>
+            <div className="textFadeInDown">
+              {props.children}
+            </div>
     );
 }
 

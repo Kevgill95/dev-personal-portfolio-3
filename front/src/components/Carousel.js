@@ -2,7 +2,7 @@ import React from 'react';
 
 import rsz_github_logo from '../assets/images/rsz_github_logo.png';
 import rsz_linkedin_logo_service from '../assets/images/rsz_linkedin_logo_service.png';
-import rsz_kev from '../assets/images/rsz_kev.jpg';
+import rsz_kev from '../assets/images/KevinGillooly.jpg';
 import '../css/app.css';
 
 import Card from '../components/Card';
