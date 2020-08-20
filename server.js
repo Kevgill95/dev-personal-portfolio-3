@@ -8,22 +8,22 @@ const buildPath = "build/index.html";
 const port = process.env.PORT || 5000;
 
 // const sendGrid = require("@sendgrid/mail");
-// const server = express();
-// server.use(bodyParser.json());
+const server = express();
+server.use(bodyParser.json());
 
-// server.use(cors());
-// server.use(express.json());
+server.use(cors());
+server.use(express.json());
 
-// server.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Origin', '*');
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-//   next();
-// });
+server.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
-// server.get('/api', (req, res, next) => {
-//   res.send('API Status: Running')
-// });
+server.get('/api', (req, res, next) => {
+  res.send('API Status: Running')
+});
 
 // server.use(express.static(`${__dirname}/front/build`));
 
@@ -72,7 +72,7 @@ const port = process.env.PORT || 5000;
 //     });
 // });
 
-// server.listen(port, () => {
-//   console.log(`Server is up on port ${port}!`);
-//   console.log(__dirname);
-// });
+server.listen(port, () => {
+  console.log(`Server is up on port ${port}!`);
+  console.log(__dirname);
+});
