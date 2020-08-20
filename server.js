@@ -21,11 +21,11 @@ server.use((req, res, next) => {
   next();
 });
 
-// server.get('/api', (req, res, next) => {
-//   res.send('API Status: Running')
-// });
+server.get('/api', (req, res, next) => {
+  res.send('API Status: Running')
+});
 
-// // server.use(express.static(`${__dirname}/front/build`));
+server.use(express.static(`${__dirname}/front/build`));
 
 // // const data = server.get("http://localhost:3000/contact");
 
