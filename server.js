@@ -27,7 +27,7 @@ server.get('/api', (req, res, next) => {
 
 server.use(express.static(`${__dirname}/front/build`));
 
-// // const data = server.get("http://localhost:3000/contact");
+const data = server.get("http://localhost:3000/contact");
 
 // // server.get('/contact', (req, res) => {
 // //   // send data as json
