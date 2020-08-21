@@ -43,7 +43,7 @@ class App extends Component {
       <Router basename={'/'}>
         <Container className="p-0" fluid={true}>
 
-          <Navbar className="border-bottom" bg="transparent" expand="lg">
+          <Navbar className="border-bottom" id="fixed-nav-bar" expand="lg">
           <Link to='/'><Navbar.Brand>Kevin Gillooly</Navbar.Brand></Link>
             
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
