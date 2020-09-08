@@ -43,6 +43,15 @@
   cursor: pointer;
 }
 
+@media (max-width:768px) {
+  .main {
+      margin-top:0;
+  }
+  .navbar-fixed-top {
+      position:static;
+  }
+} 
+
 #fixed-nav-bar {
     position: fixed;
     top: 0;

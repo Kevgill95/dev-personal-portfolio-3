@@ -47,12 +47,14 @@ class App extends Component {
           <Link to='/'><Navbar.Brand>Kevin Gillooly</Navbar.Brand></Link>
             
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-            <Navbar.Collapse id="navbar-toggle">
+            <Navbar.Collapse className="navbar-fixed-top">
             <Nav className="navbar navbar-inverse ml-auto" data-spy="affix" data-offset-top="197">
+              <div className="container main">
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
                 <Link className="nav-link" to='/static/media/Resume.6c134cda.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
+              </div>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
