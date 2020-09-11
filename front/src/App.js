@@ -11,6 +11,7 @@ import HomePage from './pages/HomePage';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import pdf from './components/resume-copy.pdf';
 
 class App extends Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class App extends Component {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
-                <Link className="nav-link" to='/static/media/Resume.6c134cda.pdf' rel="noopener noreferrer" target='_blank'>Resume</Link>
+                <Link className="nav-link" to="/static/media/resume-copy.eea2b316.pdf" rel="noopener noreferrer" target='_blank'>Resume</Link>
               </div>
               </Nav>
             </Navbar.Collapse>
@@ -74,7 +75,7 @@ class App extends Component {
           />} />
 
           <Route path='/resume' exact render={() => <Resume><a 
-          a href='/static/media/Resume.6c134cda.pdf' rel="noopener noreferrer" target="_blank"></a>
+          a href='/static/media/resume-copy.eea2b316.pdf' rel="noopener noreferrer" target="_blank"></a>
           </Resume>} />
           
           <Footer />
